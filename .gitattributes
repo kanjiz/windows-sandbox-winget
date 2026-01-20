@@ -1,0 +1,10 @@
+# Handle line endings automatically for files detected as text
+# and force LF for most files.
+* text=auto eol=lf
+
+# Explicitly declare PowerShell files as text and use CRLF line endings.
+*.ps1 text eol=crlf
+*.psm1 text eol=crlf
+
+# Explicitly declare markdown files as text and use LF line endings.
+*.md text eol=lf
