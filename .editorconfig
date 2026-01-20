@@ -1,19 +1,31 @@
-# EditorConfig is awesome: https://EditorConfig.org
-
-# top-most EditorConfig file
 root = true
 
+# 全ファイルのデフォルト設定
 [*]
 end_of_line = lf
-insert_final_newline = true
 charset = utf-8
 trim_trailing_whitespace = true
-indent_style = space
-indent_size = 2
-
-[*.{ps1,psm1}]
+insert_final_newline = true
 indent_style = space
 indent_size = 4
 
+# バッチファイル (.bat, .cmd)
+# Windowsのコマンドプロンプトは LF だと誤動作するため、CRLFを強制
+[*.{bat,cmd}]
+end_of_line = crlf
+charset = utf-8
+
+# PowerShell (.ps1)
+[*.ps1]
+end_of_line = crlf
+
+# Windows Sandbox 設定ファイル (.wsb)
+[*.wsb]
+end_of_line = crlf
+charset = utf-8
+
+# Markdown (.md)
 [*.md]
 trim_trailing_whitespace = false
+end_of_line = lf
+indent_size = 2

@@ -1,10 +1,17 @@
-# Handle line endings automatically for files detected as text
-# and force LF for most files.
-* text=auto eol=lf
+# デフォルトは自動判別
+* text=auto
 
-# Explicitly declare PowerShell files as text and use CRLF line endings.
-*.ps1 text eol=crlf
-*.psm1 text eol=crlf
+# --- Windows実行ファイル群は CRLF (Windows改行) を強制 ---
 
-# Explicitly declare markdown files as text and use LF line endings.
+# バッチファイルが LF になると動作停止するため必須
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Shift-JIS (CP932) として扱う設定
+*.ps1 text working-tree-encoding=CP932 eol=crlf
+
+# Sandbox設定ファイル
+*.wsb text eol=crlf
+
+# MarkdownファイルはLFに統一する
 *.md text eol=lf
