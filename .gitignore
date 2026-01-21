@@ -1,7 +1,11 @@
-# エディタの設定ファイル
-.vscode/
+# 自動生成されるSandbox設定ファイル
+# (実行時に絶対パスが書き込まれるため、Git管理から除外)
+launch.wsb
 
 # OSが勝手に作るサムネイルファイルなど
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# IDEやエディタの設定ファイル
+#.vscode/
