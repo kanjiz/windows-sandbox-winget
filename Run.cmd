@@ -19,6 +19,21 @@ exit /b
 $ErrorActionPreference = "Stop"
 
 # ------------------------------------------------------------------
+#  STEP 0 : Windows Sandbox が有効か確認する
+# ------------------------------------------------------------------
+$SandboxExe = "$env:SystemRoot\System32\WindowsSandbox.exe"
+
+if (-not (Test-Path $SandboxExe)) {
+    Write-Host "`n[エラー] Windows Sandbox が有効化されていません。" -ForegroundColor Red
+    Write-Host ""
+    Write-Host "有効化するには、enable-sandbox.cmd を右クリックして"
+    Write-Host "「管理者として実行」してください。（要再起動）"
+    Write-Host ""
+    Write-Host "[Enterキーを押して終了]"
+    Read-Host
+    exit
+}
+# ------------------------------------------------------------------
 #  STEP 1 : 自分の居場所（フォルダパス）を確認する
 # ------------------------------------------------------------------
 $CurrentDir = $PWD.Path
